@@ -1,4 +1,3 @@
-console.log("Hello world!");
 const smallNumbers = randomNumbers.filter(number => number < 250);
 
 

@@ -1,2 +1,7 @@
 console.log("Hello world!");
-111111111
+const smallNumbers = randomNumbers.filter(number => number < 250);
+
+
+const longFavoriteWords = favoriteWords.filter(word => {
+    return word.length > 7;
+});

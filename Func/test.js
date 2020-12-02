@@ -1,4 +1,5 @@
 //.reduce()
+
 const newNumbers = [1, 3, 5, 7];
 
 const newSum = newNumbers.reduce((accumulator, currentValue) => {
@@ -14,6 +15,7 @@ console.log(newSum);
 
 
 //.findIndex()
+
 const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
 
 const foundAnimal = animals.findIndex(animal => {
@@ -43,6 +45,7 @@ const longFavoriteWords = favoriteWords.filter(word => { return word.length > 7;
 
 
 /* .map()---------------------------------------------------------*/
+
 const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
 
 // Create the secretMessage array below
@@ -58,6 +61,7 @@ const smallNumbers = bigNumbers.map(number => number / 100);
 
 
 /* .some(), .every()      -------------------------------- */
+
 const words = ['unique', 'uncanny', 'pique', 'oxymoron', 'guise'];
 
 // Something is missing in the method call below

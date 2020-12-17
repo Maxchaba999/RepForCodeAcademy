@@ -1,0 +1,1 @@
+cobsole.log(true + false);

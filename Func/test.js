@@ -107,3 +107,222 @@ const smallerNums = nums.map(num => num - 5);
 
 // Choose a method that will return a boolean value
 nums.every(num => num < 0);
+
+
+
+//PAss by ref
+let spaceship = {
+    'Fuel Type': 'Turbo Fuel',
+    homePlanet: 'Earth'
+};
+
+// Write your code below
+
+let greenEnergy = obj => {
+    obj['Fuel Type'] = 'avocado oil';
+}
+
+let remotelyDisable = obj => {
+    obj.disabled = true;
+}
+
+greenEnergy(spaceship);
+
+remotelyDisable(spaceship);
+
+console.log(spaceship)
+
+
+
+//Loop
+
+let spaceship = {
+    crew: {
+        captain: {
+            name: 'Lily',
+            degree: 'Computer Engineering',
+            cheerTeam() { console.log('You got this!') }
+        },
+        'chief officer': {
+            name: 'Dan',
+            degree: 'Aerospace Engineering',
+            agree() { console.log('I agree, captain!') }
+        },
+        medic: {
+            name: 'Clementine',
+            degree: 'Physics',
+            announce() { console.log(`Jets on!`) }
+        },
+        translator: {
+            name: 'Shauna',
+            degree: 'Conservation Science',
+            powerFuel() { console.log('The tank is full!') }
+        }
+    }
+};
+
+// Write your code below
+for (let varName in spaceship.crew) {
+    console.log(`${varName}: ${spaceship.crew[varName].name}`);
+}
+for (let varrName in spaceship.crew) {
+    console.log(`${spaceship.crew[varrName].name}: ${spaceship.crew[varrName].degree}`);
+}
+
+
+
+//get fname()
+const robot = {
+    _model: '1E78V2',
+    _energyLevel: 100,
+    get energyLevel() {
+        if (typeof this._energyLevel === 'number') {
+            return `My current energy level is ${this._energyLevel}`;
+        } else {
+            return `System malfunction: cannot retrieve energy level`;
+        }
+    }
+};
+console.log(robot.energyLevel);
+
+
+
+//set, get+set
+const robot = {
+    _model: '1E78V2',
+    _energyLevel: 100,
+    _numOfSensors: 15,
+    get numOfSensors() {
+        if (typeof this._numOfSensors === 'number') {
+            return this._numOfSensors;
+        } else {
+            return 'Sensors are currently down.'
+        }
+    },
+    set numOfSensors(num) {
+        if (typeof num === 'number' && num >= 0) {
+            this._numOfSensors = num;
+        } else {
+            console.log('Pass in a number that is greater than or equal to 0');
+        }
+        robot.numOfSensors._numOfSensors = 100;
+        console.log(robot.numOfSensors);
+    }
+
+};
+
+
+//robotFactory
+function robotFactory(model, mobile) {
+    return {
+        model: model,
+        mobile: mobile,
+        beep() {
+            console.log('Beep Boop');
+        }
+    };
+};
+
+// To check that the property value shorthand technique worked:
+const newRobot = robotFactory('P-500', true)
+console.log(newRobot.model)
+console.log(newRobot.mobile)
+
+
+
+
+//destru  function = const name, ..
+
+
+
+
+//destr =
+
+const robot = {
+    model: '1E78V2',
+    energyLevel: 100,
+    functionality: {
+        beep() {
+            console.log('Beep Boop');
+        },
+        fireLaser() {
+            console.log('Pew Pew');
+        },
+
+    }
+};
+const { functionality } = robot;
+robot.functionality.beep();
+
+
+
+//methods
+
+class Surgeon {
+  constructor(name, department) {
+    this._name = name;
+    this._department = department;
+    this._remainingVacationDays = 20;
+  }
+  
+  get name() {
+    return this._name;
+  }
+  
+  get department() {
+    return this._department;
+  }
+  
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
+  
+  takeVacationDays(daysOff) {
+    this._remainingVacationDays -= daysOff;
+  }
+}
+
+const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+
+
+
+//
+
+
+class HospitalEmployee {
+  constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+  }
+  
+  get name() {
+    return this._name;
+  }
+  
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
+  
+  takeVacationDays(daysOff) {
+    this._remainingVacationDays -= daysOff;
+  }
+}
+
+class Nurse extends HospitalEmployee{
+  constructor(name, certifications){
+    this._name;
+    this._cerifications;
+    super(name);
+    this._certifications = certifications;
+  }
+}
+const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
+
+
+
+
+
+
+
+
